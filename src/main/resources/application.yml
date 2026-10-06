@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: pixelbook
+  datasource:
+    url: jdbc:h2:mem:pixelbook;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  web:
+    resources:
+      cache:
+        period: 0
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+# Demo sırrı sunucu sürecinin içinde kalır. Resmi doğrulayan ve resmi mühürleyen aynı sırrı kullanır.
+pixelbook:
+  hmac-secret: pixelbook-demo-hmac-anahtari
